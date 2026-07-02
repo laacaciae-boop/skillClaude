@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Acacia — Guía de marca</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --hueso:#EFE9DD;
+    --hueso-claro:#F6F2E9;
+    --madera-negra:#1F1811;
+    --madera:#503B27;
+    --alpaca:#8E887C;
+    --bronce:#9C6B2F;
+    --bronce-suave:#C69A5C;
+    --linea:#D8CFBE;
+    --rojo:#8C3B2E;
+    --verde:#4A5D3A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Karla',sans-serif;
+    background:var(--hueso);
+    color:var(--madera-negra);
+    font-size:17px;
+    line-height:1.65;
+  }
+  ::selection{background:var(--bronce-suave);color:var(--madera-negra)}
+
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px}
+
+  /* ---------- etiqueta grabada (firma visual) ---------- */
+  .placa{
+    display:inline-flex;align-items:center;gap:10px;
+    border:1px solid var(--bronce);
+    padding:6px 16px;
+    font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--bronce);
+  }
+  .placa::before{content:"";width:18px;height:1px;background:var(--bronce)}
+
+  /* ---------- hero ---------- */
+  header{
+    background:var(--madera-negra);
+    color:var(--hueso);
+    padding:96px 0 88px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(115deg, rgba(255,255,255,0) 55%, rgba(198,154,92,.06) 55.2%, rgba(198,154,92,0) 75%),
+      repeating-linear-gradient(90deg, rgba(239,233,221,.02) 0 1px, transparent 1px 96px);
+  }
+  header .placa{border-color:var(--bronce-suave);color:var(--bronce-suave)}
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(52px,9vw,92px);
+    line-height:1.02;
+    letter-spacing:.01em;
+    margin:28px 0 14px;
+  }
+  .lema{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:clamp(21px,3vw,27px);
+    color:var(--bronce-suave);
+  }
+  .hero-meta{
+    margin-top:44px;padding-top:22px;
+    border-top:1px solid rgba(198,154,92,.35);
+    display:flex;flex-wrap:wrap;gap:8px 36px;
+    font-size:13px;letter-spacing:.06em;color:var(--alpaca);
+  }
+  .hero-meta strong{color:var(--hueso);font-weight:500}
+
+  /* ---------- intro para Juan ---------- */
+  .intro{
+    background:var(--hueso-claro);
+    border-bottom:1px solid var(--linea);
+    padding:40px 0;
+  }
+  .intro p{max-width:660px}
+  .intro p + p{margin-top:12px}
+  .intro em{color:var(--madera)}
+
+  /* ---------- secciones ---------- */
+  section{padding:72px 0 8px}
+  section:last-of-type{padding-bottom:72px}
+  h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(30px,4.5vw,40px);
+    line-height:1.15;
+    margin:22px 0 18px;
+  }
+  h3{
+    font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--madera);
+    margin:34px 0 10px;
+  }
+  p + p{margin-top:12px}
+  .cuerpo{max-width:700px}
+  strong{font-weight:700}
+  .acento{color:var(--bronce);font-weight:700}
+
+  ul.lista{list-style:none;margin:14px 0}
+  ul.lista li{
+    padding:9px 0 9px 26px;position:relative;
+    border-bottom:1px solid var(--linea);
+  }
+  ul.lista li::before{
+    content:"—";position:absolute;left:0;color:var(--bronce);
+  }
+  ul.lista li:last-child{border-bottom:none}
+
+  /* ---------- tablas ---------- */
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
+  th{
+    text-align:left;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--hueso);background:var(--madera-negra);
+    padding:10px 14px;font-weight:700;
+  }
+  td{padding:11px 14px;border-bottom:1px solid var(--linea);vertical-align:top}
+  tr:nth-child(even) td{background:var(--hueso-claro)}
+  td:first-child{font-weight:700;white-space:nowrap}
+  .num{white-space:nowrap}
+
+  /* ---------- sí / no ---------- */
+  .dos-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:22px 0}
+  @media(max-width:680px){.dos-col{grid-template-columns:1fr}}
+  .col-si,.col-no{border-top:3px solid;padding:18px 20px;background:var(--hueso-claro)}
+  .col-si{border-color:var(--verde)}
+  .col-no{border-color:var(--rojo)}
+  .col-si h4,.col-no h4{
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px;
+  }
+  .col-si h4{color:var(--verde)}
+  .col-no h4{color:var(--rojo)}
+  .col-si li,.col-no li{
+    list-style:none;padding:7px 0;font-size:15px;
+    border-bottom:1px dashed var(--linea);
+  }
+  .col-si li:last-child,.col-no li:last-child{border-bottom:none}
+
+  /* ---------- destacado ---------- */
+  .destacado{
+    border-left:3px solid var(--bronce);
+    background:var(--hueso-claro);
+    padding:18px 22px;margin:22px 0;
+    font-size:16px;
+  }
+  .destacado .titulo-dest{
+    display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--bronce);font-weight:700;margin-bottom:6px;
+  }
+
+  /* ---------- líneas de material ---------- */
+  .materiales{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+  .materiales span{
+    border:1px solid var(--linea);background:var(--hueso-claro);
+    padding:5px 12px;font-size:13.5px;letter-spacing:.02em;
+  }
+
+  /* ---------- checklist (panel oscuro) ---------- */
+  .panel-oscuro{
+    background:var(--madera-negra);color:var(--hueso);
+    padding:72px 0;margin-top:72px;
+  }
+  .panel-oscuro .placa{border-color:var(--bronce-suave);color:var(--bronce-suave)}
+  .panel-oscuro h2{color:var(--hueso)}
+  .panel-oscuro p{color:var(--alpaca)}
+  ol.check{list-style:none;counter-reset:c;margin-top:26px}
+  ol.check li{
+    counter-increment:c;
+    display:flex;gap:18px;align-items:baseline;
+    padding:13px 0;border-bottom:1px solid rgba(239,233,221,.14);
+    font-size:16px;color:var(--hueso);
+  }
+  ol.check li::before{
+    content:counter(c,decimal-leading-zero);
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;color:var(--bronce-suave);min-width:34px;
+  }
+  .panel-oscuro .cierre{
+    margin-top:22px;font-style:italic;
+    font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--bronce-suave);
+  }
+
+  /* ---------- apunte pendientes ---------- */
+  .apunte{
+    margin:72px 0 0;
+    border:1px dashed var(--alpaca);
+    padding:30px 32px;
+    background:transparent;
+  }
+  .apunte .placa{border-style:dashed;border-color:var(--alpaca);color:var(--madera)}
+  .apunte .placa::before{background:var(--alpaca)}
+  .apunte h2{font-size:28px}
+  .apunte p.nota{font-size:14px;color:var(--madera);font-style:italic;margin-bottom:8px}
+
+  footer{
+    border-top:1px solid var(--linea);
+    padding:34px 0 46px;margin-top:72px;
+    font-size:13px;color:var(--alpaca);letter-spacing:.05em;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;width:100%}
+  a{color:var(--bronce)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="placa">Guía de marca · Documento de validación</span>
+    <h1>La Acacia</h1>
+    <p class="lema">Piezas artesanales únicas</p>
+    <div class="hero-meta">
+      <span>Preparado por <strong>Empuje</strong></span>
+      <span>Cuchillería y mesa artesanal</span>
+      <span>laacacia.com</span>
+    </div>
+  </div>
+</header>
+
+<div class="intro">
+  <div class="wrap">
+    <p><strong>Juan:</strong> este documento resume cómo entendemos La Acacia — qué es la marca, a quién le habla, cómo habla y cómo no. Es la base que vamos a usar para que <em>cada guión, anuncio, email, mejora web o propuesta</em> salga alineada con la identidad de la marca.</p>
+    <p>Leelo con calma y marcanos cualquier cosa que corregirías, sacarías o sumarías. Con tu OK, esta guía queda como fuente de verdad del trabajo en conjunto.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="que-es">
+    <span class="placa">01 · Identidad</span>
+    <h2>Qué es La Acacia</h2>
+    <div class="cuerpo">
+      <p>Marca argentina de <strong>cuchillería y mesa artesanal premium</strong>. Piezas hechas a mano en materiales nobles: madera, alpaca, asta de ciervo, hueso y bronce.</p>
+      <ul class="lista">
+        <li><strong>Concepto central:</strong> "piezas artesanales únicas". Cada pieza es única porque los materiales naturales nunca se repiten exactos.</li>
+        <li><strong>Posicionamiento:</strong> premium artesanal. No compite por precio: compite por calidad, diseño y el valor de lo hecho a mano. El producto habla por sí solo.</li>
+        <li><strong>Promesa emocional:</strong> el cliente compra el ritual de compartir — el asado, el picnic, la mesa con amigos y familia. La pieza acompaña (y eleva) ese momento, y queda para siempre.</li>
+        <li><strong>Canales:</strong> tienda online, Instagram, WhatsApp y showroom en CABA. Venta mayorista / regalos empresariales como línea aparte.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="catalogo">
+    <span class="placa">02 · Catálogo</span>
+    <h2>Qué vende y a qué valores</h2>
+    <table>
+      <tr><th>Categoría</th><th>Rol</th><th class="num">Rango de precios</th></tr>
+      <tr><td>Juegos de Cubiertos</td><td>Producto insignia. Cajas para 6 o 12 comensales, el mayor ticket.</td><td class="num">$420.000 – $1.400.000</td></tr>
+      <tr><td>Juegos Parrilleros</td><td>Producto insignia. Cuchillo + tenedor.</td><td class="num">$140.000 – $250.000</td></tr>
+      <tr><td>Juegos de Picnic</td><td>Ticket intermedio.</td><td class="num">$60.000 – $140.000</td></tr>
+      <tr><td>Cuchillos Individuales</td><td>Puerta de entrada a la marca.</td><td class="num">$50.000 – $120.000</td></tr>
+      <tr><td>Tablas y Platos</td><td>Complemento ideal para subir el ticket.</td><td class="num">$35.000 – $378.000</td></tr>
+    </table>
+
+    <h3>Líneas por material</h3>
+    <div class="materiales">
+      <span>Madera y Alpaca</span><span>Madera Negra y Alpaca</span><span>Madera Negra Galloneada</span>
+      <span>Ciervo y Alpaca</span><span>Ciervo Gallón y Alpaca</span><span>Ciervo y Bronce</span>
+      <span>Ciervo y Madera</span><span>Hueso y Alpaca</span><span>Hueso y Bronce</span>
+      <span>Hueso Triple Alpaca</span><span>Hueso Rústico</span><span>Madera y Bronce</span>
+      <span>Madera y Hueso</span><span>Trenzado Mixto</span><span>Alpaca Maciza</span>
+      <span>Madera Triple Alpaca</span><span>Madera Galloneada / Decorada</span>
+    </div>
+
+    <div class="destacado">
+      <span class="titulo-dest">Producto estrella</span>
+      <strong>Madera y Alpaca</strong> en cajas de cubiertos y juegos parrilleros: la línea a la que se le quiere dar más rotación. Cuando haya que destacar un producto sin otra indicación, es este.
+    </div>
+
+    <h3>Beneficios comerciales vigentes</h3>
+    <ul class="lista">
+      <li>20% OFF con efectivo o transferencia</li>
+      <li>3 cuotas sin interés en toda la tienda</li>
+      <li>Envío gratis a todo el país superando los $300.000</li>
+      <li><strong>Grabados personalizados gratis en todas las compras</strong> — el diferenciador que convierte cualquier pieza en un regalo con nombre</li>
+    </ul>
+  </section>
+
+  <section id="audiencia">
+    <span class="placa">03 · Audiencia</span>
+    <h2>A quién le habla</h2>
+    <div class="cuerpo">
+      <p><strong>Perfil:</strong> hombres y mujeres de <strong>40 a 60 años</strong>, principalmente CABA y zonas de buen poder adquisitivo. Consumen Instagram y Facebook — <strong>no TikTok</strong>. Ticket promedio alto: gente que puede y quiere pagar calidad.</p>
+      <p><strong>Universo de intereses:</strong> vida al aire libre, campo, asados, mates, golf, tenis, pádel. Estética de estancia, campo argentino, tradición.</p>
+      <div class="destacado">
+        <span class="titulo-dest">El insight madre</span>
+        El deseo de <strong>compartir con amigos y seres queridos al aire libre</strong>. No compran un cuchillo: compran el asado del domingo, el regalo que va a estar en la mesa familiar por décadas.
+      </div>
+      <p><strong>Después de comprar</strong> tiene que sentirse feliz y convencido de que el producto vale lo que pagó. <strong>Objeciones</strong> prácticamente no hay: no hace falta vencer resistencias en los textos — hace falta enamorar y justificar el valor, no defender el precio.</p>
+      <h3>Momentos de compra</h3>
+      <ul class="lista">
+        <li><strong>Regalo</strong> (el driver más grande): Día del Padre, Navidad, cumpleaños, casamientos.</li>
+        <li><strong>Autocompra</strong> del parrillero o anfitrión que se da un gusto.</li>
+        <li><strong>Regalos empresariales</strong> (octubre–noviembre): empresas que regalan a clientes y equipos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="tono">
+    <span class="placa">04 · Tono de voz</span>
+    <h2>Cómo habla la marca</h2>
+    <div class="cuerpo">
+      <p>Si la marca fuera una persona sería <strong>profesional y cálida</strong>: alguien que sabe de lo que habla y atiende bien, sin estridencias. Registro <strong>más bien formal</strong> pero argentino, con voseo ("descubrí", "regalale", "elegí"). Formal no significa acartonado: significa sobrio, cuidado, sin gritar.</p>
+      <p><strong>Palabras de la marca:</strong> artesanal, único, hecho a mano, materiales nobles, calidad, tradición, para toda la vida, compartir, la mesa, el asado, grabado con su nombre.</p>
+    </div>
+    <div class="dos-col">
+      <div class="col-si">
+        <h4>Sí — hacer</h4>
+        <ul>
+          <li>Tono sobrio, cálido y seguro. Confianza sin arrogancia.</li>
+          <li>Apelar al ritual: el asado, la mesa compartida, el regalo que queda.</li>
+          <li>Destacar lo único e irrepetible de cada pieza.</li>
+          <li>Mencionar el grabado gratis cuando el ángulo sea regalo.</li>
+          <li>Justificar el valor con calidad y artesanía.</li>
+          <li>Voseo argentino correcto y prolijo.</li>
+        </ul>
+      </div>
+      <div class="col-no">
+        <h4>No — evitar siempre</h4>
+        <ul>
+          <li>Lenguaje de liquidación: "¡APROVECHÁ YA!", urgencia artificial, mayúsculas gritadas.</li>
+          <li>Hablar de "barato" u "oferta increíble": el precio nunca es el argumento.</li>
+          <li>Humor forzado, memes, estética TikTok, slang juvenil.</li>
+          <li>Exceso de emojis y anglicismos innecesarios.</li>
+          <li>Tuteo ("descubre", "regálale").</li>
+          <li>Inventar atributos técnicos o nombrar competidores.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cuerpo"><em>El producto habla por sí solo:</em> fotos y videos protagonistas, textos que acompañan sin tapar. Las promos (20% OFF, cuotas) se comunican con elegancia, nunca como outlet.</p>
+  </section>
+
+  <section id="diferenciales">
+    <span class="placa">05 · Diferenciales</span>
+    <h2>Por qué La Acacia y no otro</h2>
+    <ul class="lista cuerpo">
+      <li><strong>1. Piezas artesanales únicas</strong> — materiales naturales, nada se repite.</li>
+      <li><strong>2. Grabados personalizados gratis en todas las compras</strong> — el regalo con nombre.</li>
+      <li><strong>3. Calidad de marca</strong> — buen branding, buena web, buenas fotos. Todo lo que se produce tiene que estar a ese nivel.</li>
+      <li><strong>4. Entrega rápida</strong> y envíos a todo el país.</li>
+      <li><strong>5. Facilidades</strong> — 20% OFF transferencia, 3 cuotas sin interés.</li>
+      <li><strong>6. Showroom en CABA</strong> para quien quiere ver antes de comprar.</li>
+    </ul>
+  </section>
+
+  <section id="calendario">
+    <span class="placa">06 · Calendario</span>
+    <h2>Estacionalidad comercial</h2>
+    <table>
+      <tr><th>Momento</th><th>Qué pasa</th><th>Qué hacemos</th></tr>
+      <tr><td>Día del Padre</td><td>Fecha clave nº 1</td><td>Campaña fuerte: ángulo regalo + grabado</td></tr>
+      <tr><td>Navidad</td><td>Fecha clave nº 2</td><td>Campaña fuerte: regalo familiar / anfitrión</td></tr>
+      <tr><td>Octubre – Noviembre</td><td>Regalos empresariales</td><td>Empujar la línea mayorista / B2B</td></tr>
+      <tr><td>Enero – Febrero</td><td>Temporada baja</td><td>Sostener, probar piezas nuevas, remarketing</td></tr>
+    </table>
+    <p class="cuerpo">Fechas secundarias aprovechables: Día de la Madre, Hot Sale y CyberMonday — participando sin romper el posicionamiento premium: promos elegantes, no remate.</p>
+  </section>
+
+  <section id="competencia">
+    <span class="placa">07 · Competencia</span>
+    <h2>Contra quién se mide</h2>
+    <div class="cuerpo">
+      <ul class="lista">
+        <li><strong>Competidores directos:</strong> Estilo Austral, Gran Criollo, El Artesano Serrano, El Cedro, Cultura Criolla, Batáng.</li>
+        <li><strong>Referente de web:</strong> Gran Criollo.</li>
+        <li><strong>Referente aspiracional en redes:</strong> Último Habitante — su estética y narrativa de vida al aire libre son el norte de contenido.</li>
+      </ul>
+      <p>La competencia se usa solo como referencia interna de estándar: nunca se menciona en piezas.</p>
+    </div>
+  </section>
+
+  <section id="aplicacion">
+    <span class="placa">08 · Aplicación</span>
+    <h2>Cómo se traduce en cada entregable</h2>
+    <div class="cuerpo">
+      <h3>Anuncios y guiones (UGC, video, estáticas)</h3>
+      <p>Ángulos: regalo con nombre (grabado), el ritual del asado y la mesa compartida, pieza única e irrepetible, para toda la vida. Ganchos sobrios, sin clickbait. Creadores acordes al público (40+, estética de campo y asado real). Producto protagonista: luz natural, madera, fuego, mesa. Instagram y Facebook — nada pensado "para TikTok".</p>
+      <h3>Web</h3>
+      <p>La web es un diferencial declarado: cualquier mejora mantiene o sube el estándar visual. Sobriedad, fotos grandes, beneficios (grabado, cuotas, envío) integrados con elegancia.</p>
+      <h3>Emails</h3>
+      <p>Asuntos sobrios con gancho, voseo, frecuencia moderada. Fechas clave con anticipación, nuevas piezas, el proceso artesanal, complementos (tablas + juego), recordatorio del grabado, línea empresarial en octubre–noviembre.</p>
+      <h3>Propuestas comerciales</h3>
+      <p>Toda acción se filtra por una pregunta: ¿sostiene el posicionamiento premium? Preferimos valor agregado (grabado, envío, cuotas, combo con tabla) antes que descuento profundo. Combos naturales: juego parrillero + tabla, caja de cubiertos + platos, cuchillo individual como entrada.</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="panel-oscuro">
+  <div class="wrap">
+    <span class="placa">09 · Control de calidad</span>
+    <h2>Checklist antes de entregar cualquier pieza</h2>
+    <p>Todo lo que produzcamos para La Acacia pasa por estas nueve preguntas.</p>
+    <ol class="check">
+      <li>¿Suena profesional y cálido, más bien formal, con voseo?</li>
+      <li>¿Habla de calidad, artesanía y momento compartido — no de precio barato?</li>
+      <li>¿Le habla a una persona de 40–60 años con poder adquisitivo?</li>
+      <li>¿Usa (o al menos no contradice) "piezas artesanales únicas"?</li>
+      <li>¿Menciona el grabado personalizado gratis si el ángulo es regalo?</li>
+      <li>¿Evita mayúsculas gritadas, urgencia agresiva, exceso de emojis, anglicismos y tuteo?</li>
+      <li>¿Los datos duros (precios, promos, envío, cuotas) están verificados y vigentes?</li>
+      <li>¿La estética es sobria: madera, fuego, campo, mesa, luz natural?</li>
+      <li>¿No menciona competidores ni inventa atributos del producto?</li>
+    </ol>
+    <p class="cierre">Si alguna respuesta es "no", se corrige antes de entregar.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="apunte" id="pendientes">
+    <span class="placa">10 · Apunte</span>
+    <h2>Lo que falta definir juntos</h2>
+    <p class="nota">Esto es solo a modo de apunte — no hace falta completar nada acá.</p>
+    <div class="cuerpo">
+      <p><strong>Reunión pendiente con Empuje</strong> para aunar criterios sobre:</p>
+      <ul class="lista">
+        <li><strong>Identidad de marca</strong> — repasar juntos el manual de identidad (logo, tipografía, colores, bajada).</li>
+        <li><strong>Política de tiempos de entrega y de grabados</strong> — demoras, alcance, tipografías disponibles.</li>
+        <li><strong>Línea de regalos empresariales</strong> — mínimos, precios mayoristas, catálogo B2B.</li>
+      </ul>
+      <p>Y cuando puedas, nos viene muy bien que nos pases:</p>
+      <ul class="lista">
+        <li>La <strong>historia de la marca</strong>: origen, taller, proceso artesanal — material de oro para contar la marca.</li>
+        <li><strong>Testimonios o reseñas reales</strong> de clientes para usar en piezas.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>La Acacia · Guía de marca</span>
+    <span>Preparado por Empuje · 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
